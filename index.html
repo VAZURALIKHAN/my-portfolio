@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>faz-portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="custom-cursor"></div>
+  <canvas id="bg-canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("VH0Oj3mWbbBGREhST"); // Replace with your actual public key
+    })();
+  </script>
+  <div class="bg-blob"></div>
+
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand"><a href="#home">Vazur<span class="dot">.</span></a></div>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="resume-btn" href="faz.pdf" download>Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-content floating">
+        <h1>Hi, I'm <span class="highlight">Vazur Alikhan</span></h1>
+        <h3 id="roleDisplay"><span id="roleTyped"></span></h3>
+        <p>
+          I architect high-performance <strong>AI solutions</strong> and <strong>Full-Stack ecosystems</strong>
+          where code meets creativity. Turning complex data into stunning digital stories.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    </section>
+    <!-- ABOUT -->
+    <!-- ABOUT -->
+    <section id="about" class="section about reveal">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          Mission-driven development with a focus on impact and elegance.
+        </p>
+
+        <div class="about-content glass-card floating">
+          <!-- Profile Image -->
+          <div class="about-img reveal">
+            <img src="faz.jpg" alt="Vazur Alikhan" />
+          </div>
+
+          <!-- About Text -->
+          <div class="about-text">
+            <h3>I'm <span class="highlight">Vazur</span> — Full Stack Developer & Creative Strategist</h3>
+            <p>
+              I’m a multi-disciplinary developer who blends code with creativity.
+              With expertise in <strong>Full Stack Development</strong> (React, Node.js, MongoDB)
+              and a strong foundation in <strong>Database Management</strong>, I build
+              performant and scalable web systems.
+            </p>
+            <p>
+              Beyond coding, I specialize in <strong>AI Integration</strong>, <strong>Prompt Engineering</strong>,
+              <strong>Data Analytics</strong>, and <strong>Digital Marketing</strong>. This allows me to not only build
+              digital
+              products but also optimize them using intelligent automation for maximum growth and reach.
+            </p>
+            <div class="about-buttons">
+              <a href="faz.pdf" class="btn resume" download>
+                <i class="fa-solid fa-download"></i> Download Resume
+              </a>
+              <a href="#contact" class="btn hire">
+                <i class="fa-solid fa-paper-plane"></i> Hire Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Font Awesome if not already linked -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills reveal">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Mastering the technologies of tomorrow.</p>
+        <div class="skills-grid reveal">
+
+          <div class="skill-card" data-tools="Python, Flask, APIs">
+            <i class="icon fa-brands fa-python"></i>
+            <h4>Python Developer</h4>
+          </div>
+
+          <div class="skill-card" data-tools="HTML, CSS, JavaScript, React.js">
+            <i class="icon fa-brands fa-react"></i>
+            <h4>Front-End</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Node.js, Express.js, REST APIs">
+            <i class="icon fa-brands fa-node-js"></i>
+            <h4>Back-End</h4>
+          </div>
+
+          <div class="skill-card" data-tools="MongoDB, Mongoose, Atlas">
+            <i class="icon fa-solid fa-database"></i>
+            <h4>MongoDB</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Figma, Adobe XD, Wireframing">
+            <i class="icon fa-solid fa-palette"></i>
+            <h4>UI/UX Design</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Adobe Premiere Pro, After Effects">
+            <i class="icon fa-solid fa-video"></i>
+            <h4>Editing</h4>
+          </div>
+
+          <div class="skill-card" data-tools="MySQL, PostgreSQL, Queries">
+            <i class="icon fa-solid fa-database"></i>
+            <h4>SQL Database</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Power BI, Data Analysis, Visualization">
+            <i class="icon fa-solid fa-chart-line"></i>
+            <h4>Power BI</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Cisco, Networking, Troubleshooting">
+            <i class="icon fa-solid fa-network-wired"></i>
+            <h4>Networking</h4>
+          </div>
+
+          <!-- New Skills Applied -->
+          <div class="skill-card" data-tools="Data Scraping, Pandas, Visualization">
+            <i class="icon fa-solid fa-magnifying-glass-chart"></i>
+            <h4>Analytics</h4>
+          </div>
+
+          <div class="skill-card" data-tools="SEO, SEM, Social Media, Ads">
+            <i class="icon fa-solid fa-bullhorn"></i>
+            <h4>Digital Marketing</h4>
+          </div>
+
+          <div class="skill-card" data-tools="Indexing, Scaling, Replication, SQL">
+            <i class="icon fa-solid fa-server"></i>
+            <h4>Database Management</h4>
+          </div>
+
+          <div class="skill-card" data-tools="PyTorch, OpenAI, LLMs, Computer Vision">
+            <i class="icon fa-solid fa-brain"></i>
+            <h4>AI & Machine Learning</h4>
+          </div>
+
+          <div class="skill-card" data-tools="LLM Optimization, Fine-tuning, NLP, GPT">
+            <i class="icon fa-solid fa-terminal"></i>
+            <h4>Prompt Engineering</h4>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this to the <head> of your page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+    <!-- SERVICES -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">
+          What I Offer — blending creativity, code, and data into meaningful digital solutions.
+        </p>
+
+        <div class="services-grid">
+          <!-- Full Stack -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-laptop-code"></i>
+            <h4>Full-Stack Web Development</h4>
+            <p>
+              End-to-end web development using React, Node.js, and MongoDB.
+              Clean, scalable, and responsive solutions tailored to client needs.
+            </p>
+          </div>
+
+          <!-- UI/UX -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-pen-ruler"></i>
+            <h4>UI / UX Design & Branding</h4>
+            <p>
+              Crafting user-centered designs, wireframes, and interactive prototypes
+              that enhance usability and brand identity.
+            </p>
+          </div>
+
+          <!-- Power BI -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-chart-line"></i>
+            <h4>Data Visualization & Analytics</h4>
+            <p>
+              Transforming raw data into powerful insights with Power BI, SQL, and
+              interactive dashboards for smarter decisions.
+            </p>
+          </div>
+
+          <!-- Video Editing -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-video"></i>
+            <h4>Video Editing & Motion Design</h4>
+            <p>
+              Creating compelling video stories using Adobe Premiere & After Effects —
+              engaging, creative, and visually appealing.
+            </p>
+          </div>
+
+          <!-- AI & Prompt Engineering -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-microchip"></i>
+            <h4>AI Integration & Prompt Engineering</h4>
+            <p>
+              Designing intelligent AI solutions, fine-tuning LLMs, and crafting expert
+              prompts to automate workflows and enhance user interaction.
+            </p>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-bullhorn"></i>
+            <h4>Digital Marketing & SEO Strategy</h4>
+            <p>
+              Boosting online presence through data-driven SEO, strategic marketing campaigns,
+              and social media growth to reach the right audience.
+            </p>
+          </div>
+
+          <!-- Database Management -->
+          <div class="service-card" data-tilt>
+            <i class="icon fa-solid fa-server"></i>
+            <h4>Database & Cloud Solutions</h4>
+            <p>
+              Architecting secure, scalable database systems and cloud infrastructures
+              using SQL, MongoDB, and AWS for high-performance applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this link inside your <head> if not already included -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+    <!-- PROJECTS (rollover image + text slide up) -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card" data-tilt>
+            <a class="proj-thumb" href="#"><img
+                src="videographer-putting-headset-editing-movie-using-post-production-software-working-creative-start-up-agency-office.jpg"
+                alt="Creative Video"></a>
+            <div class="proj-info">
+              <h4>Creative Video Editing</h4>
+              <p>Professional story-driven video editing and post-production for corporate clients.<br>Focused on
+                high-impact motion graphics and seamless transitions for maximum engagement.<br>Utilizing
+                industry-standard tools like Adobe Premiere Pro and After Effects.</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-tilt>
+            <a class="proj-thumb" href="#"><img src="add-cart-buy-now-online-commerce-graphic-concept.jpg"
+                alt="Ecommerce"></a>
+            <div class="proj-info">
+              <h4>E-commerce Website</h4>
+              <p>Scalable e-commerce platform with dynamic product pages and secure checkout flows.<br>Implements
+                real-time inventory tracking and responsive UI for mobile shopping.<br>Powered by React and Node.js with
+                a focus on conversion optimization.</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-tilt>
+            <a class="proj-thumb" href="#"><img src="marketing-strategy-planning-strategy-concept.jpg"
+                alt="Marketing"></a>
+            <div class="proj-info">
+              <h4>Marketing Design Project</h4>
+              <p>Comprehensive branding and visual campaign for a digital marketing startup.<br>Includes eye-catching
+                social media assets and high-conversion landing page designs.<br>Strategically crafted to enhance brand
+                identity and audience resonance.</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-tilt>
+            <a class="proj-thumb" href="#"><img src="restarutnt.jpg" alt="Food"></a>
+            <div class="proj-info">
+              <h4>Food Restaurant Website</h4>
+              <p>Interactive menu and online reservation system for a local gourmet restaurant.<br>Features high-quality
+                food photography and a seamless mobile-first ordering experience.<br>Built with modern CSS animations to
+                elevate the dining brand presence.</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-tilt>
+            <a class="proj-thumb" href="#"><img src="login.jpg" alt="Login pages"></a>
+            <div class="proj-info">
+              <h4>Login / Sign-up Pages</h4>
+              <p>Secure and user-friendly authentication flows with modern UI design.<br>Features smooth transitions,
+                input validation, and responsive mobile-first layouts.<br>Designed for maximum security and seamless
+                user onboarding experience.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">
+          My professional journey and the amazing teams I’ve collaborated with.
+        </p>
+
+        <div class="experience-grid">
+          <!-- Experience 1 -->
+          <div class="exp-card" data-tilt>
+            <i class="icon fa-solid fa-code"></i>
+            <h4>Vedaz — Web Developer (Intern)</h4>
+            <p>Developed responsive web applications using React and Node.js, ensuring pixel-perfect UI/UX design.</p>
+            <span class="duration">Jan 2024 – Apr 2024</span>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="exp-card" data-tilt>
+            <i class="icon fa-solid fa-palette"></i>
+            <h4>Jarurat — UI Designer (Intern)</h4>
+            <p>Created user interface designs and prototypes using Figma and Adobe XD, improving brand consistency.</p>
+            <span class="duration">May 2024 – Jul 2024</span>
+          </div>
+
+          <!-- Freelance Experience (New) -->
+          <div class="exp-card freelance-highlight" data-tilt>
+            <i class="icon fa-solid fa-laptop-code"></i>
+            <h4>Freelance Web Consultant — Self-Employed</h4>
+            <p>Delivering tailored digital solutions for diverse clients, from corporate branding to complex web
+              systems. Spearheaded SEO and data-driven marketing strategies.</p>
+            <span class="duration">Nov 2024 – Present</span>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="exp-card" data-tilt>
+            <i class="icon fa-solid fa-desktop"></i>
+            <h4>Brandklin — Front-End Developer (Intern)</h4>
+            <p>Worked on optimizing landing pages, interactive animations, and reusable components for clients.</p>
+            <span class="duration">Aug 2024 – Oct 2024</span>
+          </div>
+
+          <!-- Experience 4 -->
+          <div class="exp-card" data-tilt>
+            <i class="icon fa-solid fa-video"></i>
+            <h4>Justfold — Video Editor (Intern)</h4>
+            <p>Edited promotional and corporate videos using Adobe Premiere Pro and After Effects to enhance
+              storytelling.</p>
+            <span class="duration">Nov 2024 – Jan 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Font Awesome link in <head> if not already -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">
+          Let’s collaborate and bring your ideas to life — feel free to reach out anytime!
+        </p>
+
+        <div class="contact-grid">
+          <!-- Left Info -->
+          <div class="contact-info">
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:fasuralikhan@gmail.com">fasuralikhan@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+917538831014">+91 75388 31014</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Chennai, Tamil Nadu, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-links">
+            <a href="https://github.com/VAZURALIKHAN" target="_blank" class="social-icon">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/vazur alikhan" target="_blank"
+              class="social-icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/https://www.instagram.com/___fazur___" target="_blank"
+              class="social-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <form id="contactForm" class="form-card" onsubmit="sendEmail(); return false;">
+          <input id="name" name="name" placeholder="Your Name" required />
+          <input id="email" type="email" name="email" placeholder="Your Email" required />
+          <input id="subject" name="subject" placeholder="Subject" required />
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button class="btn submit" type="submit">Send Message</button>
+        </form>
+      </div>
+      </div>
+    </section>
+
+    <!-- Font Awesome (if not already in <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© 2025 Vazur Alikhan — All rights reserved.</small></div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
