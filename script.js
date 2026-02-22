@@ -20,7 +20,7 @@ function sendEmail() {
   const params = {
     name: name,
     email: email,
-    subject: subject,
+    title: subject, // Changed from 'subject' to 'title' to match your template screenshot
     message: message,
   };
 
@@ -40,12 +40,18 @@ function sendEmail() {
     })
     .catch((err) => {
       console.error("EmailJS Error:", err);
-      // Better error message for the user
-      if (err.status === 400 || err.status === 403) {
-        alert("❌ Configuration Error: Please check your EmailJS Public Key, Service ID, and Template ID.");
+      // Detailed error messages for debugging
+      let errorMsg = "❌ Failed to send email.";
+      if (err.text) {
+        errorMsg += " Details: " + err.text;
+      } else if (err.status === 401 || err.status === 403) {
+        errorMsg += " (Error: Invalid Public Key or Service/Template ID)";
+      } else if (err.status === 412) {
+        errorMsg += " (Error: Precondition failed - usually an issue with the template)";
       } else {
-        alert("❌ Network Error: Failed to send email. Please try again later.");
+        errorMsg += " Please try again later.";
       }
+      alert(errorMsg);
     })
     .finally(() => {
       btn.innerText = originalText;
