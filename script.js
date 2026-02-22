@@ -1,5 +1,6 @@
 
 // Final interactive behaviors: typing roles, tilt, observer, EmailJS
+// EmailJS Configuration & Function
 function sendEmail() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -11,12 +12,25 @@ function sendEmail() {
     return;
   }
 
+  const btn = document.querySelector(".form-card .submit");
+  const originalText = btn.innerText;
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
   const params = {
     name: name,
     email: email,
     subject: subject,
     message: message,
   };
+
+  if (typeof emailjs === 'undefined') {
+    console.error("EmailJS library not loaded.");
+    alert("❌ Error: Email service not available. Please refresh the page.");
+    btn.innerText = originalText;
+    btn.disabled = false;
+    return;
+  }
 
   emailjs
     .send("service_eoo7yk4", "template_z156fcn", params)
@@ -25,8 +39,17 @@ function sendEmail() {
       document.getElementById("contactForm").reset();
     })
     .catch((err) => {
-      console.error("Error sending email:", err);
-      alert("❌ Message failed to send. Please try again.");
+      console.error("EmailJS Error:", err);
+      // Better error message for the user
+      if (err.status === 400 || err.status === 403) {
+        alert("❌ Configuration Error: Please check your EmailJS Public Key, Service ID, and Template ID.");
+      } else {
+        alert("❌ Network Error: Failed to send email. Please try again later.");
+      }
+    })
+    .finally(() => {
+      btn.innerText = originalText;
+      btn.disabled = false;
     });
 }
 
@@ -209,20 +232,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // profile parallax
   const profile = document.getElementById('profileCard');
   window.addEventListener('scroll', () => { if (profile) profile.style.transform = 'translateY(' + Math.min(window.scrollY * 0.04, 20) + 'px)'; });
-
-  // EmailJS (use existing keys if available)
-  try { if (typeof emailjs !== 'undefined' && emailjs.init) try { emailjs.init('nkOTq5qkPt5FNhhzW'); } catch (e) { } } catch (e) { }
-
-  window.sendEmail = function () {
-    const params = { name: document.getElementById('name').value, email: document.getElementById('email').value, subject: document.getElementById('subject').value, message: document.getElementById('message').value };
-    try {
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_eoo7yk4', 'template_z156fcn', params).then(() => alert('✅ Email sent!'), (err) => { console.error(err); alert('❌ Email failed — check console.'); });
-      } else {
-        alert('EmailJS not available here — form simulated.'); console.log(params);
-      }
-    } catch (e) { console.error(e); alert('Error sending email.'); }
-  };
 
   // project image click placeholder
   document.querySelectorAll('.project-card .proj-thumb').forEach(a => a.addEventListener('click', e => { e.preventDefault(); alert('Project preview — replace link with live demo or repo.'); }));
